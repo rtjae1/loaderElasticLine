@@ -5,18 +5,60 @@
   --primaryColor: #444444;
   --secondaryColor: #ffdd67;
 }
+
 * {
   box-sizing: border-box;
 }
+
 html,
 body {
   margin: 0;
   padding: 0;
 }
+
+/* .content {
+  display: flex;
+  margin-left: auto;
+  align-items: center;
+} */
 .content {
+  /* border: solid black; */
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 40%;
+  left: 25%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
+  /* height: 3rem; */
+}
+
+svg {
+  position: absolute;
+  justify-content: center;
+  width: 400px;
+  fill: none;
+}
+
+svg:nth-child(2) {
+  filter: blur(40px);
+}
+
+svg path {
+  d: path('M0 25 C150 110 150 -60 300 25');
+  stroke: #ff0092;
+  stroke-width: 50px;
+  stroke-linecap: round;
+  transform: translate(50px, 50%);
+  animation: animate 2s ease-in-out infinite;
+}
+
+@keyframes animate {
+  0% {
+    stroke: #ff0092;
+    d: path("M0 25 C150 110 150 -60 300 25");
+  }
+
+  50% {
+    stroke: #00ff00;
+    d: path("M0 25 C160 -50 140 110 300 25");
+  }
 }
